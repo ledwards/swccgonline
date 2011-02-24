@@ -1,0 +1,609 @@
+@charset "utf-8";
+/* CSS Document */
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td { margin:0; padding:0; }
+* html #container{height:100%;}
+
+/* Global */
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+a {
+  font: 11px 'Lucida Grande','Lucida Sans Unicode',Arial,Verdana,sans-serif;
+  color: #FFDE71;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ffffff;
+}
+
+p {
+  color: #ffffff;
+  font: 12px 'Lucida Grande','Lucida Sans Unicode',Arial,Verdana,sans-serif;
+}
+
+h1, h2, table#cards th a {
+  font: 18px/20px 'Lucida Grande','Lucida Sans Unicode',Arial,Verdana,sans-serif;
+  color: #ffde71;
+  letter-spacing: -1px;
+  font-weight: 700;
+  text-align: center;
+}
+
+h3 {
+  color: #FFDE71;
+  font: 11px/16px 'Lucida Grande','Lucida Sans Unicode',Verdana, sans-serif;
+}
+
+
+body {
+  background: #1b1b1b;
+}
+
+#image_header {
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+input.button {
+  border: none;
+  background: url(/images/button.png) 0px 0px no-repeat;
+  font-family: "Lucida Grande","Lucida Sans Unicode",Arial,Verdana,sans-serif;
+  font-size: 12px;
+  color: #fad575;
+  padding-top: 5px;
+  text-align: center;
+  height:30px;
+  width: 84px;
+  padding-bottom: 8px;
+  clear: both;
+  margin-bottom: 10px;
+}
+
+input.button:hover {
+  background-position: 0px -29px;
+  color: #fff;
+  cursor: pointer;
+}
+
+input.button:active {
+  background-position: 0px -58px;
+  color: #fff;
+  cursor: pointer;
+}
+
+body.application #content {
+  padding-top: 40px;
+  padding-bottom: 50px;
+}
+
+div#left {
+  float: left;
+  width: 350px;
+}
+
+div#right {
+  float: right;
+  width: 400px;
+}
+
+table {
+  font: 11px 'Lucida Grande','Lucida Sans Unicode',Arial,Verdana,sans-serif;
+  color: #FFDE71;
+  text-decoration: none;
+}
+
+dt {
+  font: 11px 'Lucida Grande','Lucida Sans Unicode',Arial,Verdana,sans-serif;
+  color: #FFDE71;
+  text-decoration: none;
+}
+
+dd {
+  font: 11px 'Lucida Grande','Lucida Sans Unicode',Arial,Verdana,sans-serif;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* Header */
+body.application>div#header{
+  position: fixed;
+}
+
+body.application #header {
+  background: url(/images/bg.jpg) top left repeat-x;
+  width: 100%;
+  position: relative;
+  height: 50px;
+  z-index: 100;
+}
+
+body.application #logo {
+  height: 39px;
+  position: absolute;
+  width: 500px;
+  background: url(/images/logo.jpg) no-repeat;
+}
+
+body.application #logo a {
+  width: 100%;
+  height: 39px;
+  display: block;
+}
+
+body.application #nav {
+  height: 20px;
+  position: absolute;
+  top: 9px;
+  right: 0px;
+  width: 500px;
+  text-align: right;
+  font: 12px 'Lucida Grande','Lucida Sans Unicode',Arial,Verdana,sans-serif;
+  color: #ffde71;
+}
+
+body.application #nav ul,
+body.application #account ul {
+  display: inline;
+}
+
+body.application #nav ul li,
+body.application #account ul li {
+  list-style:none;
+  display: inline;
+  margin-right: 10px;
+}
+
+body.application #nav ul li a {
+  color: #ffde71;
+  text-decoration: none;
+  padding: 13px 9px;
+}
+
+body.application #nav ul li a:hover,
+body.application #nav ul li.current a {
+  background: url(/images/whiteoverlay.png) top center repeat-x;
+  color: #fff;
+}
+
+#search {
+  text-align: center;
+}
+
+#search input#search_field {
+  max-width: 420px;
+}
+
+.button_container .button {
+  display: inline;
+}
+
+/* Footer */
+
+#footer {
+  position: fixed;
+}
+
+body.application>div#account{
+  position: fixed;
+}
+
+body.application #account {
+  width: 100%;
+  height: 28px;
+  font: 11px 'Lucida Grande','Lucida Sans Unicode',Arial,Verdana,sans-serif;
+  color:#898989;
+  text-align: right;
+  position: absolute;
+  right: 0px;
+  background: #131313;
+  border-top: 1px solid #262626;
+  bottom: 0px;
+  z-index: 99;
+}
+
+body.application #account ul {
+  width: auto;
+  height: 24px;
+  margin-top: 5px;
+  float: right;
+}
+
+body.application #account ul li {
+  margin-right: 17px;
+}
+
+body.application #account ul li a {
+  color: #bdbdbd;
+  text-decoration: none;
+}
+
+body.application #account ul li a:hover {
+  color: #FFFFFF;
+}
+
+body.application #notice,
+body.application #alert {
+  float: left;
+  width: auto;
+  padding: 7px 12px 0 12px;
+  color: #FFFFFF;
+  height: 28px;
+  margin-top: -4px;
+  margin-right: 20px;
+  font: 11px 'Lucida Grande','Lucida Sans Unicode',Arial,Verdana,sans-serif;
+  position: relative;
+}
+
+body.application #notice { 
+  border-left: 1px solid #437785;
+  border-right: 1px solid #437785;
+  border-top: 2px solid #83c3d4;
+  background: #458293;
+}
+
+body.application #alert { 
+  border-left: 1px solid #fff;
+  border-right: 1px solid #fff;
+  border-top: 2px solid #fff;
+  background: #FF2C2C;
+}
+
+/* Errors */
+
+div.notice {
+  margin-bottom: 20px;
+  margin-top: -40px;
+  height: 20px;
+}
+
+div.notice, div.errors {
+  font: 12px 'Lucida Grande','Lucida Sans Unicode',Arial,Verdana,sans-serif;
+  color: #ffffff;
+}
+
+div.errors h2 {
+  font: 18px 'Lucida Grande','Lucida Sans Unicode',Arial,Verdana,sans-serif;  
+  color: #ffde71;
+  letter-spacing: -1px;
+  font-weight: 700;
+}
+
+div.errors li {
+  list-style: none;
+  color: #ff2c2c;
+}
+
+
+/* Login */
+
+body.devise.sessions {
+  background: url(/images/stars.jpg);
+  font-size: 1em;
+  text-align: center;
+  vertical-align: middle;
+}
+
+body.devise.sessions #logo {
+  margin: 6% auto 0 auto;
+  display: block;
+}
+
+body.devise.sessions #sun {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 446px;
+  height: 282px;
+  background: url(/images/sun.png) top right no-repeat;
+  z-index: -1;
+}
+
+body.devise.sessions #planet {
+  width: 100%;
+  height: 280px;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  background: url(/images/planet.png) center bottom no-repeat;
+  z-index: -1;
+}
+
+body.devise.sessions .loginbutton {
+  position: absolute;
+  left: 155px;
+  top: 315px;
+}
+
+body.devise.sessions #login label {
+  display: none;
+}
+
+body.devise.sessions #sign_up {
+  width: 400px;
+  height: 23px;
+  background: url(/images/sign_up_box_bg.png) top center no-repeat;
+  text-align: center;
+  font: 11px "Lucida Grande", "Lucida Sans Unicode", Verdana;
+  color: #ffde71;
+  padding-top: 6px;
+  margin: 0 auto;
+}
+
+body.devise.sessions #sign_up a {
+  margin-left: 5px;
+}
+
+#login {
+  margin: 55px auto 0 auto;
+  display: block;
+  z-index: 5;
+  width: 300px;
+  text-align: center;
+}
+
+#login input.text,
+#signup input.text,
+#reset_password input.text {
+  width: 222px;
+  height: 27px;
+  margin: 0 auto 10px auto;
+  background: url(/images/login_box_bg.png) top left no-repeat;
+  text-align: center;
+  font: 10px "Lucida Grande", "Lucida Sans Unicode", Verdana;
+  color: #CCCCCC;
+  letter-spacing: 1px;
+  overflow: hidden;
+  padding: 6px 0;
+  display:block;
+  border: none;
+}
+
+/* Sign up */
+
+body.devise #signup label {
+  display: none;
+}
+
+body.devise #signup {
+  text-align: center;
+}
+
+body.devise #logo {
+  text-align: center;
+  margin-bottom: 2em; 
+  margin-top: 1em;
+}
+
+/*div#signup {*/
+  /*background: #1b1b1b;*/
+  /*width: 400px;*/
+/*}*/
+
+/*div#signup h1 {*/
+  /*margin-bottom: 10px;*/
+  /*color: #ffde71;*/
+  /*letter-spacing: -1px;*/
+  /*font-weight: 700;*/
+/*}*/
+
+/*div#signup a {*/
+  /*font: 12px 'Lucida Grande','Lucida Sans Unicode',Arial,Verdana,sans-serif;*/
+  /*color: #ffffff;*/
+  /*text-decoration: none;*/
+/*}*/
+
+/*div#signup a:hover {*/
+  /*color: #ffde71;*/
+/*}*/
+
+/*#signup label {*/
+  /*display: none;*/
+/*}*/
+
+/*div#signup_errors {*/
+  /*margin-bottom: 10px;*/
+  /*margin-top: 10px;*/
+/*}*/
+
+/*div#login_errors {*/
+  /*margin-bottom: 20px;*/
+  /*margin-top: -40px;*/
+  /*height: 20px;*/
+/*}*/
+
+/* Cards index */
+
+.pagination {
+  text-align: center;
+  margin: 20px 0px;
+}
+
+.pagination span, .pagination em {
+  font: 11px 'Lucida Grande','Lucida Sans Unicode',Arial,Verdana,sans-serif; color: white; text-decoration: none;
+}
+
+.pagination .disabled {
+  display: none;
+}
+
+.pagination em {
+  color: #fff;
+}
+
+table#cards th, table#cards td {
+  border: none;
+  padding: 2px 10px 2px 0px;
+  text-align: left;
+}
+
+table#cards {
+  width: 720px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+div#admin_functions {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+table#cards th .current {
+  padding-right: 16px;
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
+table#cards th .asc {
+  background-image: url(/images/up_arrow.gif);
+}
+
+table#cards th .desc {
+  background-image: url(/images/down_arrow.gif);
+}
+
+#search_details {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#search_details h2 {
+  margin-bottom: 5px;
+}
+
+table#cards td.center,
+table#cards th.center {
+  text-align: center;
+}
+
+table#cards th a:hover {
+  color: #fff;
+}
+
+/* Card Form */
+
+#card_form {
+  width: 800px;
+  margin: 0 auto;
+}
+
+#card_form p {
+  margin: 10px 0px;
+}
+
+#card_form div#characteristics p,
+#card_form div#attributes p {
+  margin: 0px 0px 0px 10px;
+}
+
+#card_form input.radio {
+  margin-right: 5px;
+}
+
+#card_form label.radio_label {
+  margin-right: 5px;
+}
+
+#card_form_footer {
+  clear:both;
+  text-align: center;
+  padding-top: 25px;
+}
+
+#card_form #attributes input {
+  width: 18px;
+  margin-bottom: 5px;
+}
+
+#card_form #attributes,
+#card_form #characteristics {
+  margin-top: 10px;
+}
+
+#card_form #attributes {
+  float: left;
+}
+
+#card_form #characteristics {
+  float: right;
+}
+
+#card_form label {
+  margin-right: 15px;
+  font: 11px 'Lucida Grande','Lucida Sans Unicode',Arial,Verdana,sans-serif;
+  color: #ffde71;
+  text-decoration: none;
+}
+
+#card_form input.file {
+  color: #ffde71;
+}
+
+#card_form img {
+  display: block;
+  margin: 20px 0px 30px 0px;
+}
+
+.new_card label {
+  display: block;
+}
+
+/* Card Show */
+
+div#card_details {
+  margin: 25px auto;
+  width: 800px;
+}
+
+div#card_details h1 {
+  margin-bottom: 25px;
+}
+
+div#card_details p {
+  font: 12px 'Lucida Grande','Lucida Sans Unicode',Arial,Verdana,sans-serif;
+  color: #ffffff;
+}
+
+div#card_details h2 {
+  text-align: left;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+table#attributes {
+ margin-bottom: 1em;
+}
+
+div#card_details table tr td.attribute_value {
+  text-align: right;
+  color: #FFFFFF;
+  width: 1.5em;
+}
+
+div#card_details dd {
+  margin-bottom: 15px;
+}
+
+div#card_details dd img {
+  margin-top: 15px;
+}
+
+#card_details div#attributes,
+#card_details div#characteristics {
+  margin-bottom: 10px;
+}
+
+#card_form div#characteristics p,
+#card_form div#attributes p {
+  margin: 0px 0px 0px 10px;
+}
+

@@ -1,0 +1,20 @@
+<div class = "search-result-wrapper">
+    <div class = "results-thumbnail">
+      <%= link_to image_tag(search_result.card_image.url(:thumbnail)), card_path(search_result) %>
+    </div>
+    <div class = "results-name">
+      <%= link_to search_result.truncated_formatted_title(30), card_path(search_result), :class => "title" %>
+      <p>
+      <%= link_to search_result.expansion, card_params.merge(:expansion => search_result.expansion) %>
+      </p>
+      <p>
+      <%= link_to "#{search_result.side} Side", card_params.merge(:side => search_result.side) %>
+      </p>
+      <p class="date">
+      Last update: <%= l search_result.updated_at.localtime, :format => :without_time %>
+      </p>
+    </div>
+    <div class = "results-add">
+      <%= image_tag "/images/add.png", :class => "add_button", :value => "add" %>
+    </div>
+</div>

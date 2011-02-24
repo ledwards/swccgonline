@@ -1,0 +1,64 @@
+<div id="image_header">
+  <%= image_tag "card_database.gif", {:alt => "Card Database", :id => ""} %>
+</div>
+
+<div class="center">
+  <div id="search">
+    <div class="button_container">  
+      <%= form_tag controller_index, :method => "get" do %>
+        <%= hidden_field_tag :direction, params[:direction] %>
+        <%= hidden_field_tag :sort, params[:sort] %>
+        <%= hidden_field_tag :side, params[:side] if params[:side] %>
+        <%= hidden_field_tag :expansion, params[:expansion] if params[:expansion] %>
+        <%= text_field_tag :search, {}, :size => 32, :value => "Search for cards", :id => "search_field" %>  
+        <%= submit_tag "Search", :name => nil, :class => "button" %>
+      <% end %>
+    </div>
+  </div>
+
+  <div id="search_details">
+    <% if params[:search] %>
+      <h2>Search results for: "<%= params[:search] %>" <%= link_to "[Remove]", card_params.merge(:search => nil) %></h2>
+    <% end %>
+
+    <% if params[:expansion] %>
+      <h3>Displaying only cards from <%= params[:expansion].titleize %> <%= link_to "[Remove]", card_params.merge(:expansion => nil) %></h3>
+    <% end %>
+
+    <% if params[:side] %>
+      <h3>Displaying only <%= params[:side].capitalize %> Side cards <%= link_to "[Remove]", card_params.merge(:side => nil) %> </h3>
+    <% end %>
+
+    <h3><%= page_entries_info @cards %></h3>
+  </div>
+    
+  <% unless @cards.empty? %>
+    <table id="cards">
+      <tr>
+        <th>
+          <%= sortable "title" %>
+        </th>
+        <th>
+          <%= sortable "expansion" %>
+        </th>
+        <th class="center">
+          <%= sortable "side" %>
+        </th>
+        <% if can? :manage, Card %>
+          <th class="center">
+            <h2>Admin</h2>
+          </th>
+        <% end %>
+      </tr>
+      <%= render :partial => "card", :collection => @cards %>
+    </table>
+    <p><%= will_paginate @cards %></p>
+  
+    <% if can? :create, Card %>
+      <div id="admin_functions">
+        <h2>Admin functions:</h2>
+        <p><%= link_to 'Add a card', new_card_path %></p>
+      </div>
+    <% end %>
+  <% end %>
+</div>

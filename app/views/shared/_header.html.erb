@@ -1,0 +1,27 @@
+<div id="header">
+
+  <div id="logo">
+      <%= link_to "", home_path %>
+  </div>
+
+  <div id="nav">
+    <ul>
+      <li id="cards" <%= raw('class="current"') if params[:controller] == "cards" %>>
+        <%= link_to "Cards", "/cards" %>
+      </li>
+      <li id="deckbuilder">
+        <%= link_to "Deckbuilder", "/deckbuilder" %>
+      </li>
+      <li id="deckbox">
+        <%= link_to "Deckbox", "/deckbox" %>
+      </li>
+      <li id="play">
+        <%= link_to "Play", "/game", :action => "play" %>
+      </li>
+      <li id="community">
+        <%= link_to "Community", "/community" %>
+      </li>
+    </ul>
+  </div>
+
+</div>

@@ -32,19 +32,6 @@ ActiveRecord::Schema.define(:version => 20101204162355) do
   add_index "card_characteristics_cards", ["card_characteristic_id"], :name => "index_card_characteristics_cards_on_card_characteristic_id"
   add_index "card_characteristics_cards", ["card_id"], :name => "index_card_characteristics_cards_on_card_id"
 
-  create_table "cardlist_items", :force => true do |t|
-    t.integer "cardlist_id"
-    t.integer "card_id"
-    t.integer "quantity"
-  end
-
-  create_table "cardlists", :force => true do |t|
-    t.string   "title"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "cards", :force => true do |t|
     t.string   "title"
     t.string   "side"
@@ -80,10 +67,8 @@ ActiveRecord::Schema.define(:version => 20101204162355) do
   end
 
   create_table "roles_users", :id => false, :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "role_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer "user_id"
+    t.integer "role_id"
   end
 
   add_index "roles_users", ["role_id"], :name => "index_roles_users_on_role_id"
@@ -103,9 +88,6 @@ ActiveRecord::Schema.define(:version => 20101204162355) do
     t.string   "email",                               :default => "", :null => false
     t.string   "encrypted_password",   :limit => 128, :default => "", :null => false
     t.string   "password_salt",                       :default => "", :null => false
-    t.string   "confirmation_token"
-    t.datetime "confirmed_at"
-    t.datetime "confirmation_sent_at"
     t.string   "reset_password_token"
     t.string   "remember_token"
     t.datetime "remember_created_at"
@@ -114,11 +96,14 @@ ActiveRecord::Schema.define(:version => 20101204162355) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string   "authentication_token"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 

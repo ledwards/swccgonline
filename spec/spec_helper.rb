@@ -2,6 +2,9 @@
 ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
+require 'spec/support/fixture_builder.rb'
+require 'factory_girl'
+Factory.find_definitions
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
@@ -24,4 +27,27 @@ RSpec.configure do |config|
   # examples within a transaction, remove the following line or assign false
   # instead of true.
   config.use_transactional_fixtures = true
+  
+  module Paperclip
+    class Geometry
+      def self.from_file file
+        parse("100x100")
+      end
+    end
+    class Thumbnail
+      def make
+        src = URI.parse("#{Rails.root}/spec/fixtures/test.jpg")
+        dst = Tempfile.new([@basename, @format].compact.join("."))
+        dst.binmode
+        FileUtils.cp(src.path, dst.path)
+        return dst
+      end
+    end
+  end
+  
+  Factory.sequences.each do |name, seq|
+    seq.instance_variable_set(:@value, 1000)
+  end
+  
+  config.extend VCR::RSpec::Macros
 end

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SWCCG Online | Login</title>
+  <link rel="icon" type="image/png" href="/images/favicon.png" />
+  <%= stylesheet_link_tag "stylesheet" %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+</head>
+<body class ="<%= params[:controller].gsub('/',' ') %>">
+
+<div id="content">
+  <%= yield %>
+</div>
+
+</body>
+</html>

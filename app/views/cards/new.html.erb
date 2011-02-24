@@ -1,0 +1,53 @@
+<div id="image_header">
+  <%= image_tag "card_database.gif", {:alt => "Card Database", :id => ""} %>
+</div>
+
+<div id="card_form" class="new_card">
+  <%= form_for @card, :url => cards_path, :html => { :multipart => true } do |f| %>
+    <%= render :partial => "shared/error_messages", :locals => { :target => @card } %>
+
+    <p>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </p>
+    <p>
+      <%= f.label :side %>
+      <%= f.text_field :side %>
+    </p>
+    <p>
+      <%= f.label :expansion %>
+      <%= f.text_field :expansion %>
+    </p>
+    <p>
+      <%= f.label :uniqueness %>
+      <%= f.text_field :uniqueness %>
+    </p>
+    <p>
+      <%= f.label :card_type %>
+      <%= f.text_field :card_type %>
+    </p>
+    <p>
+      <%= f.label :subtype %>
+      <%= f.text_field :subtype %>
+    </p>
+    <p>
+      <%= f.label :card_image %>
+      <%= f.file_field :card_image, :class => "file" %>
+    </p>
+    <p>
+      <%= f.label :vslip_image %>
+      <%= f.file_field :vslip_image, :class => "file" %>
+    </p>
+    <p>
+      <%= f.label :card_back_image %>
+      <%= f.file_field :card_back_image, :class => "file" %>
+    </p>
+    <p>
+      <%= f.label :vslip_back_image %>
+      <%= f.file_field :vslip_back_image, :class => "file" %>
+    </p>
+    <p>
+      <%= f.submit "Create", :class => "button" %>
+    </p>
+  <% end %>
+</div>

@@ -1,0 +1,28 @@
+<div id="logo">
+  <%= image_tag "/images/logo_big.png" %>
+</div>
+
+<div id="errors">
+  <%= render :partial => "shared/error_messages", :locals => { :target => resource } %>
+</div>
+
+<div id="signup">
+  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+    <%= f.label :email %>
+    <%= f.text_field :email, :class => "text" %>
+
+    <%= f.label :password %>
+    <%= f.password_field :password, :class => "text" %>
+
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, :class => "text" %>
+
+    <%= f.submit "Sign up", :class => "button", :id => "register_button" %>
+  
+    <div id="login_links">
+      <p>
+        <%= link_to "Already have an account? Log in!", new_user_session_path %>
+      </p>
+    </div>
+  <% end %>
+</div>

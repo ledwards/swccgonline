@@ -1,0 +1,15 @@
+<div id="account">
+  <% if flash[:notice] %>
+    <div id="notice"><%= flash[:notice] %></div>
+  <% end %>
+  <% if flash[:alert] %>
+    <div id="alert"><%= flash[:alert] %></div>
+  <% end %>
+  <ul>
+    <li id="username">
+      <%= link_to current_user.email, "#" %> logged in
+    </li>
+    <li><%= link_to "Log Out", destroy_user_session_path %></li>
+    <li><%= link_to "Account Settings", "#" %></li>
+  </ul>
+</div>

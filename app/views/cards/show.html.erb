@@ -1,0 +1,71 @@
+<div id="image_header">
+  <%= image_tag "card_database.gif", { :alt => "Card Database" } %>
+</div>
+<div id="card_details">
+  <div id="left">
+    <h2>
+      <%= @card.formatted_title %>
+      <% if can?(:edit, @card) %>
+        <%= link_to "[Edit]", edit_card_path(@card) %>
+      <% end %>
+    </h2>
+    
+    <dt>Card Type:</dt>
+    <dd><%= @card.card_type_and_subtype %></dd>
+    
+    <dt>Expansion:</dt>
+    <dd><%= @card.expansion %></dd>
+    
+    <dt>Side:</dt>
+    <dd><%= @card.side %></dd>
+    
+    <dt>Lore:</dt>
+    <dd><%= @card.lore %></dd>
+    
+    <dt>Gametext:</dt>
+    <dd><%= @card.gametext %></dd>
+    
+    <table id="attributes">
+      <tr>
+        <td>
+          Rarity:
+        </td>
+        <td class="attribute_value">
+          <%= @card.rarity %>
+        </td>
+      </tr>
+      <% @card.card_attributes.each do |attribute| %>
+        <tr>
+          <td>
+            <%= attribute.name %>:
+          </td>
+          <td class="attribute_value">
+            <%= attribute.value %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+
+    <div id="characteristics">
+      <dt>Characteristics:</dt>
+      <dd><%= @card.card_characteristics.map(&:name).join(', ') %></dd>
+    </div>
+    
+  </div>
+  <div id="right">
+    <dt>Card Image:</dt>
+    <dd><%= image_tag @card.card_image.url(:full_size) %></dd>
+    <dd><%= image_tag @card.card_back_image.url(:full_size) if @card.has_card_back_image? %></dd>
+    
+    <% if @card.has_vslip_image? %>
+      <dt>Virtual Slip:</dt>
+      <dd><%= image_tag @card.vslip_image.url(:full_size) %></dd>
+      <dd><%= image_tag @card.vslip_back_image.url(:full_size) if @card.has_vslip_back_image? %></dd>
+    <% end %>
+    
+    <dt>Last Updated:</dt>
+    <dd><%= l @card.updated_at.localtime %></dd>
+  </div>
+  <div style="clear: both;"></div>
+</div>
+
