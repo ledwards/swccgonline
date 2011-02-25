@@ -23,18 +23,10 @@
 
   <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
     <%= f.label 'email' %>
-    <%= f.text_field :email, :class => 'text',
-      :value => "E-MAIL",
-      :onblur => "if(this.value=='') this.value='E-MAIL';",
-      :onfocus => "if(this.value==this.defaultValue) this.value='';",
-      :autocomplete =>"off" %>
+    <%= f.text_field :email, :class => 'text' %>
 
     <%= f.label 'password' %>
-    <%= f.password_field :password, :class => 'text',
-      :value => "PASSWORD",
-      :onblur => "if(this.value=='') this.value='PASSWORD';",
-      :onfocus => "if(this.value==this.defaultValue) this.value='';",
-      :autocomplete =>"off" %>
+    <%= f.password_field :password, :class => 'text' %>
 
     <%= f.label 'submit' %>
     <%= f.submit 'Sign in', :class => 'button' %>

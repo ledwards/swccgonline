@@ -242,14 +242,14 @@ body.application #alert {
   position: relative;
 }
 
-body.application #notice { 
+body.application #notice {
   border-left: 1px solid #437785;
   border-right: 1px solid #437785;
   border-top: 2px solid #83c3d4;
   background: #458293;
 }
 
-body.application #alert { 
+body.application #alert {
   border-left: 1px solid #fff;
   border-right: 1px solid #fff;
   border-top: 2px solid #fff;
@@ -270,7 +270,7 @@ div.notice, div.errors {
 }
 
 div.errors h2 {
-  font: 18px 'Lucida Grande','Lucida Sans Unicode',Arial,Verdana,sans-serif;  
+  font: 18px 'Lucida Grande','Lucida Sans Unicode',Arial,Verdana,sans-serif;
   color: #ffde71;
   letter-spacing: -1px;
   font-weight: 700;
@@ -378,46 +378,9 @@ body.devise #signup {
 
 body.devise #logo {
   text-align: center;
-  margin-bottom: 2em; 
+  margin-bottom: 2em;
   margin-top: 1em;
 }
-
-/*div#signup {*/
-  /*background: #1b1b1b;*/
-  /*width: 400px;*/
-/*}*/
-
-/*div#signup h1 {*/
-  /*margin-bottom: 10px;*/
-  /*color: #ffde71;*/
-  /*letter-spacing: -1px;*/
-  /*font-weight: 700;*/
-/*}*/
-
-/*div#signup a {*/
-  /*font: 12px 'Lucida Grande','Lucida Sans Unicode',Arial,Verdana,sans-serif;*/
-  /*color: #ffffff;*/
-  /*text-decoration: none;*/
-/*}*/
-
-/*div#signup a:hover {*/
-  /*color: #ffde71;*/
-/*}*/
-
-/*#signup label {*/
-  /*display: none;*/
-/*}*/
-
-/*div#signup_errors {*/
-  /*margin-bottom: 10px;*/
-  /*margin-top: 10px;*/
-/*}*/
-
-/*div#login_errors {*/
-  /*margin-bottom: 20px;*/
-  /*margin-top: -40px;*/
-  /*height: 20px;*/
-/*}*/
 
 /* Cards index */
 

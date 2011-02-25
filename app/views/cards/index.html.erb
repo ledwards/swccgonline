@@ -10,7 +10,7 @@
         <%= hidden_field_tag :sort, params[:sort] %>
         <%= hidden_field_tag :side, params[:side] if params[:side] %>
         <%= hidden_field_tag :expansion, params[:expansion] if params[:expansion] %>
-        <%= text_field_tag :search, {}, :size => 32, :value => "Search for cards", :id => "search_field" %>  
+        <%= text_field_tag :search, "", :size => 32, :id => "search_field" %>  
         <%= submit_tag "Search", :name => nil, :class => "button" %>
       <% end %>
     </div>
@@ -35,10 +35,10 @@
   <% unless @cards.empty? %>
     <table id="cards">
       <tr>
-        <th>
+        <th width=40%>
           <%= sortable "title" %>
         </th>
-        <th>
+        <th width=30%>
           <%= sortable "expansion" %>
         </th>
         <th class="center">
