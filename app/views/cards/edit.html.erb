@@ -21,7 +21,7 @@
         <%= select :card, :expansion, Card.expansions %>
       </p>
       <p>
-        <%= f.label :type %> <%= link_to "[+]", "#" %><br />
+        <%= f.label :card_type %> <%= link_to "[+]", "#" %><br />
         <%= select :card, :card_type, Card.card_types %>
       </p>
       <% unless Card.subtypes_for(@card.card_type).count == 1 %>

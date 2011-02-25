@@ -505,6 +505,7 @@ table#cards th a:hover {
   font: 11px 'Lucida Grande','Lucida Sans Unicode',Arial,Verdana,sans-serif;
   color: #ffde71;
   text-decoration: none;
+  display: block;
 }
 
 #card_form input.file {
@@ -514,10 +515,6 @@ table#cards th a:hover {
 #card_form img {
   display: block;
   margin: 20px 0px 30px 0px;
-}
-
-.new_card label {
-  display: block;
 }
 
 /* Card Show */

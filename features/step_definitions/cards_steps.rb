@@ -7,6 +7,14 @@ When /^I edit the card with title "([^"]*)"$/ do |title|
   visit edit_card_path(card.id)
 end
 
+Given /^a card type named "([^"]*)"$/ do |name|
+  Factory.create(:card, :card_type => name)
+end
+
+Given /^an expansion named "([^"]*)"$/ do |name|
+  Factory.create(:card, :expansion => name)
+end
+
 Given /^some cards$/ do
   30.times { Factory.create(:card) }
   @cards = []
